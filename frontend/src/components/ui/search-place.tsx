@@ -100,7 +100,7 @@ function SearchPlace({
         })}
         placeholder="Rechercher un restaurant"
         className="w-full"
-        menuPortalTarget={document.body}
+        menuPortalTarget={typeof document !== 'undefined' ? document.body : null}
         menuPosition={'fixed'}
         styles={{ menuPortal: base => ({ ...base, zIndex: 60 }) }}
       />
