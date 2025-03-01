@@ -11,11 +11,15 @@ import { PlaceOption, SearchPlace } from "./ui/search-place";
 import { delay } from "@/lib/delay";
 import StoreButton from "./ui/store-button";
 
-export default function StoreFinder({
-  config = {},
-}: {
-  config: StoreFinderConfig;
-}) {
+const VAPIANO_CONFIG = {
+  apiKey: '4d5b7598-7ce4-4533-b0c0-f2147b175fd9',
+  label: 'Vapiano',
+  style: {
+    mainColor: '#D40128',
+  },
+};
+
+export default function StoreFinder() {
   const [isLoading, setIsLoading] = useState(false);
   const [hasSearch, setHasSearch] = useState(false);
   const [tab, setTab] = useState('');
@@ -25,6 +29,17 @@ export default function StoreFinder({
   const sectionRef = useRef<HTMLElement>(null);
   const [searchValue, setSearchValue] = useState<PlaceOption|null>();
   const isWindowMd = useMediaQuery('(min-width: 768px)');
+  const [config, setConfig] = useState<StoreFinderConfig | null>(VAPIANO_CONFIG);
+
+  useEffect(() => {
+    const windowWithConfig = window as unknown as Window & { 
+      storeLocatoreConfig: StoreFinderConfig 
+    };
+    
+    if ('storeLocatoreConfig' in windowWithConfig) {
+      setConfig(windowWithConfig.storeLocatoreConfig);
+    }
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -41,6 +56,10 @@ export default function StoreFinder({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  if (!config) {
+    return null;
+  }
 
   const handleShowPopover = async (newTab: string) => {
     if (showPopover) {
