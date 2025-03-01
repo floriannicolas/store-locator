@@ -12,7 +12,7 @@ import { delay } from "@/lib/delay";
 import StoreButton from "./ui/store-button";
 
 const VAPIANO_CONFIG = {
-  apiKey: '4d5b7598-7ce4-4533-b0c0-f2147b175fd9',
+  apiKey: process.env.NEXT_PUBLIC_VAPIANO_API_KEY,
   label: 'Vapiano',
   style: {
     mainColor: '#D40128',
