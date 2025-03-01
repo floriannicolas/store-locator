@@ -113,8 +113,6 @@ export default function StoreFinder() {
     setHasSearch(true);
   };
 
-  console.log('isMd', isWindowMd)
-
   return (
     <section
       ref={sectionRef}

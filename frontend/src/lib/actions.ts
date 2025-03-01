@@ -1,5 +1,3 @@
-"use server";
-
 import { Store, StoreResponse } from "./definitions";
 
 type SearchStoreParams = {
@@ -8,7 +6,7 @@ type SearchStoreParams = {
 }
 
 export async function getStores(apiKey: string, params: SearchStoreParams = {}): Promise<Store[]> {
-    const url = new URL(`${process.env.API_URL}/api/clients/stores`);
+    const url = new URL(`${process.env.NEXT_PUBLIC_API_URL}/api/clients/stores`);
     if (params.lat && params.lng) {
         url.searchParams.append("lat", params.lat.toString());
         url.searchParams.append("lng", params.lng.toString());
