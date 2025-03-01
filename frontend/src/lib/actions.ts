@@ -2,15 +2,13 @@
 
 import { Store, StoreResponse } from "./definitions";
 
-const API_URL = "http://localhost:3000/api/clients/stores";
-
 type SearchStoreParams = {
     lat?: number;
     lng?: number;
 }
 
 export async function getStores(apiKey: string, params: SearchStoreParams = {}): Promise<Store[]> {
-    const url = new URL(API_URL);
+    const url = new URL(`${process.env.API_URL}/api/clients/stores`);
     if (params.lat && params.lng) {
         url.searchParams.append("lat", params.lat.toString());
         url.searchParams.append("lng", params.lng.toString());
