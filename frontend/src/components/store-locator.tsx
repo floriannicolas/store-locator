@@ -19,7 +19,7 @@ const VAPIANO_CONFIG = {
   },
 };
 
-export default function StoreFinder() {
+export default function StoreLocator() {
   const [mounted, setMounted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [hasSearch, setHasSearch] = useState(false);

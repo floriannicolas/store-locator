@@ -1,5 +1,5 @@
-import StoreFinder from "@/components/store-finder";
+import StoreLocator from "@/components/store-locator";
 
 export default function Home() {
-  return <StoreFinder />;
+  return <StoreLocator />;
 }
