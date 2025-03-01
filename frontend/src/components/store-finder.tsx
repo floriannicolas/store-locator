@@ -20,6 +20,7 @@ const VAPIANO_CONFIG = {
 };
 
 export default function StoreFinder() {
+  const [mounted, setMounted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [hasSearch, setHasSearch] = useState(false);
   const [tab, setTab] = useState('');
@@ -30,6 +31,10 @@ export default function StoreFinder() {
   const [searchValue, setSearchValue] = useState<PlaceOption|null>();
   const isWindowMd = useMediaQuery('(min-width: 768px)');
   const [config, setConfig] = useState<StoreFinderConfig | null>(VAPIANO_CONFIG);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const windowWithConfig = window as unknown as Window & { 
@@ -57,7 +62,7 @@ export default function StoreFinder() {
     };
   }, []);
 
-  if (!config) {
+  if (!config || !mounted) {
     return null;
   }
 

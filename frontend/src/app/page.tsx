@@ -1,6 +1,4 @@
-import dynamic from "next/dynamic";
-
-const StoreFinder = dynamic(() => import("../components/store-finder"));
+import StoreFinder from "@/components/store-finder";
 
 export default function Home() {
   return <StoreFinder />;
