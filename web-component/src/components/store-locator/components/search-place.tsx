@@ -100,7 +100,7 @@ function SearchPlace({
         menuPortalTarget={typeof document !== 'undefined' ? document.body : null}
         menuPosition={'fixed'}
         styles={{
-          menuPortal: (base) => ({ ...base, zIndex: 60 }),
+          menuPortal: (base) => ({ ...base, zIndex: 110000300 }),
         }}
       />
     </div>
