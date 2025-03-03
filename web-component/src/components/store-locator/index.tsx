@@ -44,9 +44,6 @@ export default function StoreLocator() {
   const handleHidePopover = () => {
     setShowPopover(false)
     setTab('')
-    setStores([])
-    setIsLoading(false)
-    setHasSearch(true)
   }
 
   const handleShowPopover = async (newTab: string) => {
