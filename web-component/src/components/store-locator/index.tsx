@@ -37,11 +37,11 @@ export default function StoreLocator() {
 
   useEffect(() => {
     const windowWithConfig = window as unknown as Window & {
-      storeLocatoreConfig: StoreFinderConfig
+      myliStoreLocatorConfig: StoreFinderConfig
     }
 
-    if ('storeLocatoreConfig' in windowWithConfig) {
-      setConfig(windowWithConfig.storeLocatoreConfig)
+    if ('myliStoreLocatorConfig' in windowWithConfig) {
+      setConfig(windowWithConfig.myliStoreLocatorConfig)
     }
   }, [])
 
