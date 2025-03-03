@@ -1,17 +1,19 @@
 {
   "name": "web-component",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && pnpm run build:after",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:after": "cp dist/assets/index-*.js ../frontend/public/dist/store-locator-v$npm_package_version.js"
   },
   "dependencies": {
     "@r2wc/react-to-web-component": "^2.0.4",
     "@radix-ui/react-slot": "^1.1.2",
+    "@tailwindcss/cli": "^4.0.9",
     "@tailwindcss/postcss": "^4",
     "@tailwindcss/vite": "^4.0.9",
     "class-variance-authority": "^0.7.1",
@@ -23,7 +25,8 @@
     "react-select": "^5.10.0",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
-    "usehooks-ts": "^3.1.1"
+    "usehooks-ts": "^3.1.1",
+    "vite-plugin-css-injected-by-js": "^3.5.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

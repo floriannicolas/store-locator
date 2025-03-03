@@ -3,7 +3,6 @@
  */
 // import { StrictMode } from 'react'
 // import { createRoot } from 'react-dom/client'
-// import './globals/styles.css'
 // import App from './App.tsx'
 
 // createRoot(document.getElementById('root')!).render(
@@ -15,9 +14,11 @@
 /**
  * Building component.
  */
-import r2wc from '@r2wc/react-to-web-component';
 import StoreLocator from './components/store-locator';
+import { convertReact2WebComponent } from './lib/convert-react-2-web-component';
 
-const wcStoreLocator = r2wc(StoreLocator);
+const wcStoreLocator = convertReact2WebComponent(StoreLocator, {
+  shadow: "open",
+});
 
 customElements.define("myli-store-locator", wcStoreLocator);

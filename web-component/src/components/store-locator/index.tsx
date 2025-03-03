@@ -1,5 +1,4 @@
-"use client";
-
+import '@/globals/styles.css';
 import { useMediaQuery } from 'usehooks-ts';
 import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -116,6 +115,7 @@ export default function StoreLocator() {
   return (
     <section
       ref={sectionRef}
+      id="myli-store-locator"
       className="fixed bottom-0 left-0 right-0 flex items-center justify-center gap-1 p-1 bg-white z-50 md:relative md:gap-3 md:py-3"
       style={{
         backgroundColor: isWindowMd ? config?.style?.mainColor : 'white',
