@@ -9,7 +9,7 @@ export const convertReact2WebComponent = (
   class WebComponentWithStyle extends WebComponent {
     connectedCallback() {
       // 2. Use connectedCallback instead of constructor (this can be changed by your usecase.)
-      // @ts-ignore
+      // @ts-expect-error a WebComponent has the connectedCallback method
       super.connectedCallback()
       const styleTags = document.getElementsByTagName('style')
       Array.from(styleTags).forEach((styleTag) => {
