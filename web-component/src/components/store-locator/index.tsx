@@ -10,14 +10,6 @@ import { StoreSchedules } from '@/components/store-locator/components/store-sche
 import { PlaceOption, SearchPlace } from '@/components/store-locator/components/search-place'
 import StoreButton from '@/components/store-locator/components/store-button'
 
-const VAPIANO_CONFIG = {
-  apiKey: import.meta.env.VITE_VAPIANO_API_KEY,
-  label: 'Vapiano',
-  style: {
-    mainColor: '#D40128',
-  },
-}
-
 export default function StoreLocator() {
   const [mounted, setMounted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -29,7 +21,7 @@ export default function StoreLocator() {
   const sectionRef = useRef<HTMLElement>(null)
   const [searchValue, setSearchValue] = useState<PlaceOption | null>()
   const isWindowMd = useMediaQuery('(min-width: 768px)')
-  const [config, setConfig] = useState<StoreFinderConfig | null>(VAPIANO_CONFIG)
+  const [config, setConfig] = useState<StoreFinderConfig | null>(null)
 
   useEffect(() => {
     setMounted(true)
