@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    cssInjectedByJsPlugin({ styleId: "myli-store-locator" }),
+    cssInjectedByJsPlugin(),
   ],
   resolve: {
     alias: {

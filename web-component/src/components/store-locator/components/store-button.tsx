@@ -1,16 +1,16 @@
-import React from "react";
-import { useMediaQuery } from "usehooks-ts";
+import React from 'react'
+import { useMediaQuery } from 'usehooks-ts'
 
 export default function StoreButton({
   mainColor,
   onClick,
-  children
+  children,
 }: {
-  mainColor: string | undefined;
-  onClick: () => void;
+  mainColor: string | undefined
+  onClick: () => void
   children: React.ReactNode
 }) {
-  const isWindowMd = useMediaQuery('(min-width: 768px)');
+  const isWindowMd = useMediaQuery('(min-width: 768px)')
 
   return (
     <div
@@ -23,5 +23,5 @@ export default function StoreButton({
     >
       {children}
     </div>
-  );
+  )
 }

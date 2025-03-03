@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build && pnpm run build:after",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:after": "cp dist/assets/index-*.js ../frontend/public/dist/store-locator-v$npm_package_version.js"
+    "build:after": "cp dist/assets/index-*.js ../payload/public/dist/store-locator-v$npm_package_version.js"
   },
   "dependencies": {
     "@r2wc/react-to-web-component": "^2.0.4",
@@ -43,6 +43,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
     "postcss": "^8.5.3",
+    "prettier": "^3.4.2",
     "tailwindcss": "^4.0.9",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
