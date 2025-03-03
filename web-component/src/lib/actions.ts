@@ -6,7 +6,7 @@ type SearchStoreParams = {
 }
 
 export async function getStores(apiKey: string, params: SearchStoreParams = {}): Promise<Store[]> {
-    const url = new URL(`${process.env.REACT_APP_API_URL}/api/clients/stores`);
+    const url = new URL(`${import.meta.env.VITE_API_URL}/api/clients/stores`);
     if (params.lat && params.lng) {
         url.searchParams.append("lat", params.lat.toString());
         url.searchParams.append("lng", params.lng.toString());

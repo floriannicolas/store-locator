@@ -1,10 +1,8 @@
-"use client";
-
-import { useMemo, useState } from "react";
 import dayjs from "dayjs";
 
-import { Store } from "../../lib/definitions";
+import { Store } from "@/lib/definitions";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { useMemo, useState } from "react";
 
 const frenchDays = {
   monday: "lundi",

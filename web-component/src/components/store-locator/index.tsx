@@ -2,17 +2,17 @@
 
 import { useMediaQuery } from 'usehooks-ts';
 import { useRef, useEffect, useState } from "react";
-import { Button } from "./ui/button";
-import { Store, StoreFinderConfig } from "../lib/definitions";
-import { getStores } from "../lib/actions";
-import Loader from "./ui/loader";
-import { StoreSchedules } from "./ui/store-schedules";
-import { PlaceOption, SearchPlace } from "./ui/search-place";
-import { delay } from "../lib/delay";
-import StoreButton from "./ui/store-button";
+import { Button } from "@/components/ui/button";
+import { Store, StoreFinderConfig } from "@/lib/definitions";
+import { getStores } from "@/lib/actions";
+import { delay } from "@/lib/delay";
+import Loader from "@/components/ui/loader";
+import { StoreSchedules } from "@/components/store-locator/components/store-schedules";
+import { PlaceOption, SearchPlace } from "@/components/store-locator/components/search-place";
+import StoreButton from "@/components/store-locator/components/store-button";
 
 const VAPIANO_CONFIG = {
-  apiKey: process.env.REACT_APP_VAPIANO_API_KEY,
+  apiKey: import.meta.env.VITE_VAPIANO_API_KEY,
   label: 'Vapiano',
   style: {
     mainColor: '#D40128',
